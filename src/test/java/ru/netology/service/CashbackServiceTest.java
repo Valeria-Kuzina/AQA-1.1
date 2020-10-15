@@ -1,24 +1,22 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 public class CashbackServiceTest {
     CashbackService CashbackService = new CashbackService();
 
     @Test
     public void shouldTestRemainIfAmount0() {
-        assertEquals(CashbackService.remain(0), 1000);
+        assertEquals(1000, CashbackService.remain(0));
     }
-    
     @Test
     public void shouldTestRemainIfAmount400() {
-        assertEquals(CashbackService.remain(400), 600);
+        assertEquals(600, CashbackService.remain(400));
     }
-    
     @Test
     public void shouldTestRemainIfAmount1000() {
-        assertNotEquals(CashbackService.remain(1000), 0);
+        assertNotEquals(0, CashbackService.remain(1000));
     }
-}
+} 
